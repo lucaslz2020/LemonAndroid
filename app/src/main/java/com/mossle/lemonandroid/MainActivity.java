@@ -1,4 +1,4 @@
-package com.mossle.androidlemonoa;
+package com.mossle.lemonandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

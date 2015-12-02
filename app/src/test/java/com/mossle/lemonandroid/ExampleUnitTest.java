@@ -1,4 +1,4 @@
-package com.mossle.androidlemonoa;
+package com.mossle.lemonandroid;
 
 import org.junit.Test;
 
