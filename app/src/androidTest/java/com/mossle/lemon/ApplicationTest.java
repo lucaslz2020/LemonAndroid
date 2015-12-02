@@ -1,4 +1,4 @@
-package com.mossle.lemonandroid;
+package com.mossle.lemon;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
