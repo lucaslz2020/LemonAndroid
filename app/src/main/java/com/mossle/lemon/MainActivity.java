@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.mossle.lemon.contact.fragment.ContactsFragment;
 import com.mossle.lemon.message.fragment.SessionsFragment;
 import com.mossle.lemonandroid.fragment.HomeFragment;
 
@@ -33,18 +34,18 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public void initTabs(){
         mFragmentArrayList = new ArrayList<>(3);
         Fragment sessionsFragment = SessionsFragment.newInstance();
-        Fragment fragment02 = HomeFragment.getInstance("首页2222");
+        Fragment contactsFragment = ContactsFragment.newInstance();
         Fragment fragment03 = HomeFragment.getInstance("首页3");
 
         mFragmentArrayList.add(sessionsFragment);
-        mFragmentArrayList.add(fragment02);
+        mFragmentArrayList.add(contactsFragment);
         mFragmentArrayList.add(fragment03);
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.tab_content, sessionsFragment)
-                .add(R.id.tab_content,fragment02)
+                .add(R.id.tab_content, contactsFragment)
                 .add(R.id.tab_content, fragment03)
                 .show(sessionsFragment)
-                .hide(fragment02)
+                .hide(contactsFragment)
                 .hide(fragment03)
                 .commit();
     }
