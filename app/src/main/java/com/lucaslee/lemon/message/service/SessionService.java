@@ -1,6 +1,6 @@
-package com.mossle.lemon.message.service;
+package com.lucaslee.lemon.message.service;
 
-import com.mossle.lemon.message.domain.Session;
+import com.lucaslee.lemon.message.domain.Session;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.mossle.lemon;
+package com.lucaslee.lemon;
 
 import org.junit.Test;
 

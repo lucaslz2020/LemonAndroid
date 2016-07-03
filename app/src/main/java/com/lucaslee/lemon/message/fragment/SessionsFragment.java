@@ -1,10 +1,5 @@
-package com.mossle.lemon.message.fragment;
+package com.lucaslee.lemon.message.fragment;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.mossle.lemon.R;
-import com.mossle.lemon.message.domain.Session;
-import com.mossle.lemon.message.service.SessionService;
-import com.mossle.lemon.widget.DividerItemDecoration;
+import com.lucaslee.lemon.R;
+import com.lucaslee.lemon.message.domain.Session;
+import com.lucaslee.lemon.message.service.SessionService;
+import com.lucaslee.lemon.widget.DividerItemDecoration;
 
 import java.util.List;
 

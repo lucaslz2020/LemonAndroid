@@ -1,6 +1,6 @@
-package com.mossle.lemon.contact.service;
+package com.lucaslee.lemon.contact.service;
 
-import com.mossle.lemon.contact.domain.Contact;
+import com.lucaslee.lemon.contact.domain.Contact;
 
 import java.util.ArrayList;
 import java.util.List;

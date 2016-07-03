@@ -1,4 +1,4 @@
-package com.mossle.lemon.activity;
+package com.lucaslee.lemon.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.mossle.lemon.R;
+import com.lucaslee.lemon.R;
 
 /**
  * Created by LucasLee on 16/7/3.

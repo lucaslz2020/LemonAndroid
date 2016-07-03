@@ -1,4 +1,4 @@
-package com.mossle.lemon.widget;
+package com.lucaslee.lemon.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

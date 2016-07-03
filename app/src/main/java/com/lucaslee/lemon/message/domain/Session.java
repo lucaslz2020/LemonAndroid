@@ -1,4 +1,4 @@
-package com.mossle.lemon.message.domain;
+package com.lucaslee.lemon.message.domain;
 
 import java.util.Date;
 

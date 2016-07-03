@@ -1,4 +1,4 @@
-package com.mossle.lemon.contact.fragment;
+package com.lucaslee.lemon.contact.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.mossle.lemon.R;
-import com.mossle.lemon.contact.domain.Contact;
-import com.mossle.lemon.contact.service.ContactService;
-import com.mossle.lemon.widget.DividerItemDecoration;
+import com.lucaslee.lemon.R;
+import com.lucaslee.lemon.contact.domain.Contact;
+import com.lucaslee.lemon.contact.service.ContactService;
+import com.lucaslee.lemon.widget.DividerItemDecoration;
 
 import java.util.List;
 

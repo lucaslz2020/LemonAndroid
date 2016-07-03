@@ -1,4 +1,4 @@
-package com.mossle.lemon;
+package com.lucaslee.lemon;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
-import com.mossle.lemon.contact.fragment.ContactsFragment;
-import com.mossle.lemon.message.fragment.SessionsFragment;
-import com.mossle.lemon.profile.ProfileFragment;
+import com.lucaslee.lemon.contact.fragment.ContactsFragment;
+import com.lucaslee.lemon.message.fragment.SessionsFragment;
+import com.lucaslee.lemon.profile.ProfileFragment;
 
 import java.util.ArrayList;
 import java.util.List;
