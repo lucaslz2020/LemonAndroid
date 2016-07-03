@@ -7,5 +7,6 @@ lemon oa android
 - Android Studio 2.0
 - Java8 +
 
-# Doing
-  消息模块
+# TODO
+1. 我的界面
+2. 集成IM。
