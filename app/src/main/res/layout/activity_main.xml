@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/tab_icon_new"
+            android:drawableTop="@drawable/select_tab_sessions"
             android:gravity="center"
             android:text="消息"/>
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/tab_icon_new"
+            android:drawableTop="@drawable/select_tab_contacts"
             android:gravity="center"
             android:text="通讯录"/>
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:drawableTop="@drawable/tab_icon_new"
+            android:drawableTop="@drawable/select_tab_profile"
             android:gravity="center"
             android:text="我"/>
     </RadioGroup>
