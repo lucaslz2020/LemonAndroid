@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mossle.lemon.R;
 import com.mossle.lemon.contact.domain.Contact;
 import com.mossle.lemon.contact.service.ContactService;
+import com.mossle.lemon.widget.DividerItemDecoration;
 
 import java.util.List;
 
@@ -41,6 +43,7 @@ public class ContactsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_contacts, container, false);
         mContactsRecyclerView = (RecyclerView) view.findViewById(R.id.contactsRecyclerView);
         mContactsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mContactsRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayout.VERTICAL));
 
         updateUI();
 
