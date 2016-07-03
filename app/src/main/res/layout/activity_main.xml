@@ -8,49 +8,46 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/tab_content"
+        android:id="@+id/contentFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
-        android:background="#77557799"
-        />
+        android:background="#77557799"/>
 
     <RadioGroup
-        android:id="@+id/rg_tab"
+        android:id="@+id/containerRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/rbtn_tab_01"
+            android:id="@+id/sessionsRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/tab_icon_new"
             android:gravity="center"
-            android:text="聊天"/>
+            android:text="消息"/>
 
         <RadioButton
-            android:id="@+id/rbtn_tab_02"
+            android:id="@+id/contactsRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/tab_icon_new"
             android:gravity="center"
-            android:text="动态"/>
+            android:text="通讯录"/>
 
         <RadioButton
-            android:id="@+id/rbtn_tab_03"
+            android:id="@+id/profileRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/tab_icon_new"
             android:gravity="center"
-            android:text="个人中心"/>
+            android:text="我"/>
     </RadioGroup>
-
-
 </LinearLayout>

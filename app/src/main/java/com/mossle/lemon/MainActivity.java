@@ -4,50 +4,54 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.mossle.lemon.contact.fragment.ContactsFragment;
 import com.mossle.lemon.message.fragment.SessionsFragment;
 import com.mossle.lemon.profile.ProfileFragment;
-import com.mossle.lemonandroid.fragment.HomeFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
-    private ArrayList<Fragment> mFragmentArrayList;
+    private List<Fragment> mFragments;
 
-    RadioGroup mRadioGroup;
+    private RadioGroup mRadioGroup;
 
-    private int currentTabFragmentIndex=0;
+    private int mCurrentFragmentIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
 
-        initTabs();
-
-        mRadioGroup.setOnCheckedChangeListener(this);
-        mRadioGroup.check(((RadioButton) (mRadioGroup.getChildAt(currentTabFragmentIndex))).getId());
+        setupContainerRadioGroup();
+        setupFragments();
     }
 
-    public void initTabs(){
-        mFragmentArrayList = new ArrayList<>(3);
+    private void setupContainerRadioGroup() {
+        mRadioGroup = (RadioGroup) findViewById(R.id.containerRadioGroup);
+        mRadioGroup.setOnCheckedChangeListener(this);
+        mRadioGroup.check(mRadioGroup.getChildAt(mCurrentFragmentIndex).getId());
+    }
+
+    private void setupFragments() {
+        mFragments = new ArrayList<>();
+
         Fragment sessionsFragment = SessionsFragment.newInstance();
         Fragment contactsFragment = ContactsFragment.newInstance();
         Fragment profileFragment = ProfileFragment.newInstance();
 
-        mFragmentArrayList.add(sessionsFragment);
-        mFragmentArrayList.add(contactsFragment);
-        mFragmentArrayList.add(profileFragment);
+        mFragments.add(sessionsFragment);
+        mFragments.add(contactsFragment);
+        mFragments.add(profileFragment);
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.tab_content, sessionsFragment)
-                .add(R.id.tab_content, contactsFragment)
-                .add(R.id.tab_content, profileFragment)
+                .add(R.id.contentFragment, sessionsFragment)
+                .add(R.id.contentFragment, contactsFragment)
+                .add(R.id.contentFragment, profileFragment)
                 .show(sessionsFragment)
                 .hide(contactsFragment)
                 .hide(profileFragment)
@@ -57,26 +61,31 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
 
-        int index = 1;
+        int index = getClickFragmentIndex(checkedId);
 
-        if (checkedId == R.id.rbtn_tab_01) {
-            index = 0;
-        } else if (checkedId == R.id.rbtn_tab_02) {
-            index = 1;
-        } else if (checkedId == R.id.rbtn_tab_03) {
-            index =2;
-        }
-
-        if(index==currentTabFragmentIndex){
+        if(index == mCurrentFragmentIndex) {
             return;
         }
 
-        FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
-        trx.hide(mFragmentArrayList.get(currentTabFragmentIndex));
-        if(!mFragmentArrayList.get(index).isAdded()){
-            trx.add(R.id.tab_content,mFragmentArrayList.get(index));
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.hide(mFragments.get(mCurrentFragmentIndex));
+        if(!mFragments.get(index).isAdded()){
+            fragmentTransaction.add(R.id.contentFragment, mFragments.get(index));
         }
-        trx.show(mFragmentArrayList.get(index)).commit();
-        currentTabFragmentIndex = index;
+        fragmentTransaction.show(mFragments.get(index)).commit();
+        mCurrentFragmentIndex = index;
+    }
+
+    private int getClickFragmentIndex(int checkedID) {
+        if (checkedID == R.id.sessionsRadioButton) {
+            return 0;
+        }
+        if (checkedID == R.id.contactsRadioButton) {
+            return 1;
+        }
+        if (checkedID == R.id.profileRadioButton) {
+            return 2;
+        }
+        return 0;
     }
 }
