@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 
 import com.mossle.lemon.contact.fragment.ContactsFragment;
 import com.mossle.lemon.message.fragment.SessionsFragment;
+import com.mossle.lemon.profile.ProfileFragment;
 import com.mossle.lemonandroid.fragment.HomeFragment;
 
 import java.util.ArrayList;
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
+
         initTabs();
+
         mRadioGroup.setOnCheckedChangeListener(this);
         mRadioGroup.check(((RadioButton) (mRadioGroup.getChildAt(currentTabFragmentIndex))).getId());
     }
@@ -35,18 +38,19 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mFragmentArrayList = new ArrayList<>(3);
         Fragment sessionsFragment = SessionsFragment.newInstance();
         Fragment contactsFragment = ContactsFragment.newInstance();
-        Fragment fragment03 = HomeFragment.getInstance("首页3");
+        Fragment profileFragment = ProfileFragment.newInstance();
 
         mFragmentArrayList.add(sessionsFragment);
         mFragmentArrayList.add(contactsFragment);
-        mFragmentArrayList.add(fragment03);
+        mFragmentArrayList.add(profileFragment);
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.tab_content, sessionsFragment)
                 .add(R.id.tab_content, contactsFragment)
-                .add(R.id.tab_content, fragment03)
+                .add(R.id.tab_content, profileFragment)
                 .show(sessionsFragment)
                 .hide(contactsFragment)
-                .hide(fragment03)
+                .hide(profileFragment)
                 .commit();
     }
 
