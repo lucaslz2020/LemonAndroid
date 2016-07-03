@@ -13,7 +13,7 @@ import com.lucaslee.lemon.profile.ProfileFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity {
 
     private List<Fragment> mFragments;
 
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private void setupContainerRadioGroup() {
         mRadioGroup = (RadioGroup) findViewById(R.id.containerRadioGroup);
-        mRadioGroup.setOnCheckedChangeListener(this);
         mRadioGroup.check(mRadioGroup.getChildAt(mCurrentFragmentIndex).getId());
+        mRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> checkedChanged(i));
     }
 
     private void setupFragments() {
@@ -58,10 +58,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 .commit();
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-
-        int index = getClickFragmentIndex(checkedId);
+    private void checkedChanged(int checkedID) {
+        int index = getClickedFragmentIndex(checkedID);
 
         if(index == mCurrentFragmentIndex) {
             return;
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mCurrentFragmentIndex = index;
     }
 
-    private int getClickFragmentIndex(int checkedID) {
+    private int getClickedFragmentIndex(int checkedID) {
         if (checkedID == R.id.sessionsRadioButton) {
             return 0;
         }
