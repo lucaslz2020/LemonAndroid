@@ -7,15 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.mossle.lemon.message.fragment.SessionsFragment;
 import com.mossle.lemonandroid.fragment.HomeFragment;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
-    private ArrayList<Fragment> mFragmentArrayList;
-    RadioGroup mRadioGroup;
-    private int currentTabFragmentIndex=1;
 
+    private ArrayList<Fragment> mFragmentArrayList;
+
+    RadioGroup mRadioGroup;
+
+    private int currentTabFragmentIndex=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +27,26 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mRadioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         initTabs();
         mRadioGroup.setOnCheckedChangeListener(this);
-        currentTabFragmentIndex = mFragmentArrayList.size() / 2;
         mRadioGroup.check(((RadioButton) (mRadioGroup.getChildAt(currentTabFragmentIndex))).getId());
     }
+
     public void initTabs(){
         mFragmentArrayList = new ArrayList<>(3);
-        Fragment fragment01 =HomeFragment.getInstance("首页1111");
-        Fragment fragment02 =HomeFragment.getInstance("首页2222");
-        Fragment fragment03 =HomeFragment.getInstance("首页3");
+        Fragment sessionsFragment = SessionsFragment.newInstance();
+        Fragment fragment02 = HomeFragment.getInstance("首页2222");
+        Fragment fragment03 = HomeFragment.getInstance("首页3");
 
-        mFragmentArrayList.add(fragment01);
+        mFragmentArrayList.add(sessionsFragment);
         mFragmentArrayList.add(fragment02);
         mFragmentArrayList.add(fragment03);
-        getSupportFragmentManager().beginTransaction().add(R.id.tab_content, fragment01)
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.tab_content, sessionsFragment)
                 .add(R.id.tab_content,fragment02)
                 .add(R.id.tab_content, fragment03)
-                .hide(fragment01)
-                .show(fragment02)
+                .show(sessionsFragment)
+                .hide(fragment02)
                 .hide(fragment03)
                 .commit();
-
     }
 
     @Override

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LemonAndroid</string>
+    <string name="avatar_image">avatar image</string>
 </resources>

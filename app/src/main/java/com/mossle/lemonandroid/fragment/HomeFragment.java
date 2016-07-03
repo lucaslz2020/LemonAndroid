@@ -8,14 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.mossle.lemon.R;
 import com.mossle.lemonandroid.BaseFragment;
-import com.mossle.lemonandroid.R;
 import com.mossle.lemonandroid.util.L;
 
 /**
  * Created by hello on 2015/12/14 20:17
  */
 public class HomeFragment extends BaseFragment {
+
     public static Fragment getInstance(String title){
         HomeFragment homeFragment = new HomeFragment();
         Bundle bundle = new Bundle();
@@ -27,9 +28,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,5 +51,4 @@ public class HomeFragment extends BaseFragment {
         }
         return view;
     }
-
 }

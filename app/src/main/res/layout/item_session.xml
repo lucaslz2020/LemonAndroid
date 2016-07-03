@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/default_avatar"
+        android:contentDescription="@string/avatar_image"/>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_toRightOf="@id/avatarImageView"
+        android:layout_marginLeft="16dp"
+        android:layout_alignTop="@id/avatarImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="张三"/>
+
+    <TextView
+        android:id="@+id/contentTextView"
+        android:layout_below="@id/nameTextView"
+        android:layout_alignLeft="@id/nameTextView"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:text="你好"/>
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_alignTop="@id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:text="刚刚"/>
+</RelativeLayout>
