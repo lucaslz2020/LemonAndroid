@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">LemonAndroid</string>
     <string name="avatar_image">avatar image</string>
+    <string name="messages">消息</string>
+    <string name="contacts">通讯录</string>
+    <string name="profile">我</string>
 </resources>

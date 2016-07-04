@@ -11,7 +11,8 @@
         android:id="@+id/contentFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0"/>
+        android:layout_weight="1.0"
+        android:background="@color/light_grey"/>
 
     <RadioGroup
         android:id="@+id/containerRadioGroup"
@@ -27,7 +28,7 @@
             android:button="@null"
             android:drawableTop="@drawable/select_tab_sessions"
             android:gravity="center"
-            android:text="消息"/>
+            android:text="@string/messages"/>
 
         <RadioButton
             android:id="@+id/contactsRadioButton"
@@ -37,7 +38,7 @@
             android:button="@null"
             android:drawableTop="@drawable/select_tab_contacts"
             android:gravity="center"
-            android:text="通讯录"/>
+            android:text="@string/contacts"/>
 
         <RadioButton
             android:id="@+id/profileRadioButton"
@@ -47,6 +48,6 @@
             android:button="@null"
             android:drawableTop="@drawable/select_tab_profile"
             android:gravity="center"
-            android:text="我"/>
+            android:text="@string/profile"/>
     </RadioGroup>
 </LinearLayout>
