@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="grey">#f2f2f2</color> <!-- 灰色-->
+    <color name="light_grey">#eae8e8</color> <!-- 亮灰色-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#111111</color> <!-- 白色 -->
 </resources>
