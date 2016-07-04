@@ -4,7 +4,7 @@ lemon oa android
 学习Android 。
 
 # 环境
-- Android Studio 2.0
+- Android Studio 2.1
 - Java8 +
 
 # TODO
