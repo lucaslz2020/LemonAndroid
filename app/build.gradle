@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    compileSdkVersion Integer.parseInt(compile_sdk_version)
+    buildToolsVersion "${build_tools_version}"
 
     defaultConfig {
         applicationId "com.mossle.lemonandroid"
-        minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion Integer.parseInt(min_sdk_version)
+        targetSdkVersion Integer.parseInt(max_sdk_version)
+        versionCode Integer.parseInt(version_code)
+        versionName "{VERSION_NAME}"
         jackOptions {
             enabled true
         }
@@ -28,7 +28,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
+    testCompile "junit:junit:${junit_version}"
+    compile "com.android.support:appcompat-v7:${android_support_lib_version}"
+    compile "com.android.support:recyclerview-v7:${android_support_lib_version}"
 }
